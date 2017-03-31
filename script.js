@@ -181,6 +181,27 @@ window.onload = function() {
   console.log(flowersSet.size);
 
 
+  // Generators
+
+  function* generator() {
+    let x = yield 'banana';
+    let y = yield 'pine-apple';
+    yield console.log('orange');
+    yield console.log('pearch');
+    return x + y;
+  }
+
+  // generator();
+
+  var myGen = generator();
+  // yield data
+  console.log(myGen.next());
+  myGen.next(5);
+  // after yield
+  myGen.next(10);
+  myGen.next();
+  console.log(myGen.next());
+
 
 
 
