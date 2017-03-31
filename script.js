@@ -102,6 +102,92 @@ window.onload = function() {
     - includes
   */
 
+  let repeatStr = 'repeat ',
+      startsWithStr = 'The method startsWith return true if a string starts the' +
+                      'characters that were passed as a parameter. Case Sensitive',
+      endsWithStr = 'String for endsWith method',
+      includesStr = 'My name is Nadezhda'; // The method includes return true if a string includes the
+                                           // characters that were passed as a parameter. Case Sensitive
+
+  console.log(repeatStr.repeat(3));
+  console.log(startsWithStr.startsWith('The'));
+  // проверка начала с позиции
+  console.log(startsWithStr.startsWith('me', 4));
+
+  console.log(endsWithStr.endsWith('method'));
+  // проверка конца строки с позиции
+  console.log(endsWithStr.endsWith('met', endsWithStr.length - 3));
+
+  console.log(includesStr.includes('name'));
+
+
+
+  // Arrow Functions
+  // ES5
+  var helloFunc = function(){
+    console.log('Hello');
+  };
+  helloFunc();
+
+  //ES6
+  let helloFunc2 = (name) => console.log(`Hello ${name}`);
+  helloFunc2('Mark');
+
+  let ninja = {
+    name: 'Ryu',
+    shop(x){
+      window.setInterval(() => {
+        if (x > 0) {
+          console.log(`${this.name} chopped the anamy`); // если бы использовали function, то this стало бы недоступным, так как это была бы новая область видимости
+          x--;
+        }
+      }, 1000);
+    }
+  }
+  ninja.shop(3);
+
+
+  // Sets
+  // It's a new data structure in ES6, which excluding repetition
+  // Set's methods
+  /*
+    - add
+    - delete
+    - has
+    - clear
+    - size - it is a property
+  */
+
+  let flowersArray = ['rose', 'lily', 'rose', 'jasmine', 'chamomile', 'lily', 'chamomile'];
+  let flowersSet = new Set(flowersArray);
+
+  console.log(flowersArray);
+
+  flowersSet.add('tulip').add('snowdrop').add('jasmine');
+
+  console.log(flowersSet);
+  console.log(flowersSet.size);
+
+  flowersSet.delete('lily');
+  console.log(flowersSet);
+  console.log(flowersSet.size);
+
+  flowersArray = [...flowersSet];
+  console.log(flowersArray);
+
+  console.log(flowersSet.has('rose'));
+
+  flowersSet.clear();
+  console.log(flowersSet.size);
+
+
+
+
+
+
+
+
+
 
 
 
